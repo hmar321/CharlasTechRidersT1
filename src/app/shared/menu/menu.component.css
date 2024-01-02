@@ -1,0 +1,78 @@
+/* Menu completo */
+:host ::ng-deep .p-menubar {
+  margin: -1rem;
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--background-negro1);
+  height: 8rem;
+  padding: 1.5rem;
+}
+
+/* Conjunto de links */
+:host ::ng-deep .p-element {
+  margin-left: auto;
+}
+
+/* Estas clases se aplican cuando el ancho
+de la pantalla llega a 960px */
+@media screen and (max-width: 960px) {
+  /* Boton para cuando el ancho es demasiado pequeño */
+  :host ::ng-deep .p-menubar-button {
+    margin-left: auto;
+  }
+  :host ::ng-deep .p-menubar-button:hover {
+    background: var(--background-negro1-hover);
+  }
+  :host ::ng-deep .p-menubar-button:focus {
+    box-shadow: none !important;
+  }
+  /* Conjunto de links ajuste para encuadrar el boton */
+  :host ::ng-deep .p-element {
+    margin-left: 0;
+  }
+}
+
+/* Ajuste para encuadrar el boton y los links*/
+:host ::ng-deep .p-menubar-end {
+  margin-left: 0 !important;
+}
+
+/* Caja de cada link */
+:host ::ng-deep .p-menuitem-link {
+  background: var(--background-negro1) !important;
+}
+:host ::ng-deep .p-menuitem-link:hover {
+  background: var(--background-negro1-hover) !important;
+}
+:host ::ng-deep .p-menuitem-link:focus {
+  box-shadow: none !important;
+}
+
+/* Caja de cada link dentro de un submenu */
+:host ::ng-deep .p-menubar-root-list ul li a {
+  border-bottom: 1px solid var(--background-negro2-hover);
+  background: var(--background-negro2) !important;
+}
+:host ::ng-deep .p-menubar-root-list ul li a:hover {
+  border-bottom: 1px solid var(--background-negro2-hover);
+  background: var(--background-negro2-hover) !important;
+}
+
+/* Caja de conjunto de links raiz */
+:host ::ng-deep .p-menubar-root-list {
+  padding: 0;
+}
+/* Caja de conjunto de links desplegable */
+:host ::ng-deep .p-submenu-list {
+  padding: 0;
+}
+
+/* Texto de los links */
+:host ::ng-deep .p-menuitem-text {
+  color: var(--color-blanco1) !important;
+}
+
+/* Icono desplegable de los links */
+:host ::ng-deep .p-submenu-icon {
+  color: var(--color-blanco1) !important;
+}

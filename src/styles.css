@@ -4,3 +4,12 @@
 @import "node_modules/primeng/resources/primeng.css";
 @import "node_modules/primeicons/primeicons.css";
 @import "node_modules/primeflex/primeflex.css";
+
+:root {
+    --background-negro1:rgb(15,15,15);
+    --background-negro1-hover:rgb(25, 25, 25);
+    --background-negro2:rgb(45, 45, 45);
+    --background-negro2-hover:rgb(65, 65, 65);
+    --color-negro1:rgb(70,70,70);
+    --color-blanco1: white;
+}

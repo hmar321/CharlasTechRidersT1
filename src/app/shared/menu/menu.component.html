@@ -1,2 +1,7 @@
-<h1>Menu component</h1>
-<router-outlet></router-outlet>
+<p-menubar [model]="items">
+    <ng-template pTemplate="start" *ngIf="imagen">
+        <a routerLink="{{linkImagen}}">
+            <img src="{{imagen}}" height="50" class="mr-2" />
+        </a>
+    </ng-template>
+</p-menubar>
