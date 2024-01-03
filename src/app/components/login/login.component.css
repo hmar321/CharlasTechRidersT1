@@ -1,0 +1,14 @@
+:host ::ng-deep p-card{
+    padding-top: 100px;
+    width: 500px;
+}
+
+:host ::ng-deep .p-inputtext{
+    width: 300px;
+}
+
+:host ::ng-deep .boton-flotante{
+    position: absolute;
+    left: 0;
+    margin: 1rem;
+}
