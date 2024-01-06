@@ -1,5 +1,5 @@
-:host ::ng-deep p-card{
-    padding-top: 100px;
+:host ::ng-deep .p-card{
+    margin-top: 100px;
     width: 500px;
 }
 
@@ -12,3 +12,4 @@
     left: 0;
     margin: 1rem;
 }
+

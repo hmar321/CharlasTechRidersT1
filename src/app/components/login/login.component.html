@@ -2,16 +2,16 @@
     <a routerLink="">
         <p-button icon="pi pi-arrow-left" styleClass="p-button-rounded boton-flotante"></p-button>
     </a>
-    <p-card styleClass="p-5 surface-200">
+    <p-card styleClass="p-5 surface-100">
         <div class="flex flex-column align-items-center">
-            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <form [formGroup]="formulario">
                 <div class="mb-5">
                     <span class="p-float-label">
-                        <input type="text" pInputText id="usuario" maxlength="31" formControlName="usuario" [pTooltip]=" 
-                    formulario.controls['usuario'].dirty && formulario.controls['usuario'].value === '' ? 'Campo obligatorio.' 
-                    :formulario.controls['usuario'].errors?.['maxlength'] ? 'Máximo 30 caracteres.' 
+                        <input type="text" pInputText id="email" maxlength="31" formControlName="email" [pTooltip]=" 
+                    formulario.controls['email'].dirty && formulario.controls['email'].value === '' ? 'Campo obligatorio.' 
+                    :formulario.controls['email'].errors?.['maxlength'] ? 'Máximo 30 caracteres.' 
                     :''">
-                        <label for="usuario">Usuario</label>
+                        <label for="email">Email</label>
                     </span>
 
                 </div>
@@ -25,7 +25,7 @@
                     </span>
                 </div>
                 <div class="mb-5">
-                    <p-button label="Iniciar sesión"></p-button>
+                    <p-button label="Iniciar sesión" (onClick)="iniciarSesion()"></p-button>
                 </div>
                 <div>
                     <p>¿No tienes cuenta? <a routerLink="/signin">Regístrate</a></p>

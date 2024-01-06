@@ -2,11 +2,13 @@ import { Routes, RouterModule } from "@angular/router";
 import { ModuleWithProviders } from "@angular/core";
 import { LoginComponent } from "./components/login/login.component";
 import { AdminComponent } from "./components/admin/admin.component";
-import { SigninComponent } from "./components/signin/signin.component";
 import { PublicComponent } from "./components/public/public.component";
 import { HomeComponent } from "./components/public/home/home.component";
 import { CentrosAdminComponent } from "./components/admin/centros-admin/centros-admin.component";
 import { TechridersAdminComponent } from "./components/admin/techriders-admin/techriders-admin.component";
+import { ProfesorSigninComponent } from "./components/signin/profesor-signin/profesor-signin.component";
+import { TechriderSigninComponent } from "./components/signin/techrider-signin/techrider-signin.component";
+import { EmpresaSigninComponent } from "./components/signin/empresa-signin/empresa-signin.component";
 
 const rutas: Routes = [
     {
@@ -26,7 +28,13 @@ const rutas: Routes = [
         path: "login", component: LoginComponent,
     },
     {
-        path: "signin", component: SigninComponent,
+        path: "signin/profesor", component: ProfesorSigninComponent,
+    },
+    {
+        path: "signin/techrider", component: TechriderSigninComponent,
+    },
+    {
+        path: "signin/empresa", component: EmpresaSigninComponent,
     },
 ];
 

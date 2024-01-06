@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { SigninComponent } from './signin.component';
+import { TechriderSigninComponent } from './techrider-signin.component';
 
-describe('SigninComponent', () => {
-  let component: SigninComponent;
-  let fixture: ComponentFixture<SigninComponent>;
+describe('TechriderSigninComponent', () => {
+  let component: TechriderSigninComponent;
+  let fixture: ComponentFixture<TechriderSigninComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SigninComponent ]
+      declarations: [ TechriderSigninComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SigninComponent);
+    fixture = TestBed.createComponent(TechriderSigninComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { SesionService } from 'src/app/services/sesion.service';
 
 @Component({
   selector: 'app-public',
@@ -8,96 +10,119 @@ import { MenuItem } from 'primeng/api';
 })
 export class PublicComponent implements OnInit {
   items: MenuItem[];
-  isLoged:boolean=true;
+  isLoged: boolean = false;
 
-  constructor() {
-    var linkUsuarios:MenuItem={
+  constructor(
+    private _sesionService: SesionService
+  ) {
+    var linkUsuarios: MenuItem = {
       label: 'Usuarios',
-      routerLink:'/login',
+      items:[
+        {
+          label: 'Login',
+          routerLink:'login'
+        },
+        {
+          label: 'Registrarse',
+          items:[
+            {
+              label:'Profesor',
+              routerLink:'signin/profesor',
+            },
+            {
+              label:'TechRider',
+              routerLink:'signin/techrider',
+            },
+            {
+              label:'Empresa',
+              routerLink:'signin/empresa',
+            },
+          ]
+        }
+      ],
     };
-    if (this.isLoged===true) {
-      linkUsuarios={
+    var token = localStorage.getItem("token");
+    if (token != null) {
+      linkUsuarios = {
         label: 'Usuarios',
-        items:[
+        items: [
           {
-            label:'Link1',
-            routerLink:'',
+            label: 'Link1',
+            routerLink: '',
           },
           {
-            label:'Link2',
-            routerLink:'',
+            label: 'Link2',
+            routerLink: '',
           },
           {
-            label:'Cerrar sesión',
-            routerLink:'',
-            command:()=> this.cerrarSesion(),
+            label: 'Cerrar sesión',
+            routerLink: '',
+            command: () => this.cerrarSesion(),
           },
         ]
       };
-    }else{
-
     }
 
     this.items = [
       linkUsuarios,
       {
-        label:'Charlas técnicas',
-        items:[
+        label: 'Charlas técnicas',
+        items: [
           {
-            label:'Tipos',
+            label: 'Tipos',
           },
           {
-            label:'Participa',
-            items:[
+            label: 'Participa',
+            items: [
               {
-                label:'TechRiders'
+                label: 'TechRiders'
               },
               {
-                label:'Empresas'
+                label: 'Empresas'
               },
               {
-                label:'Centros Formadores'
+                label: 'Centros Formadores'
               },
             ]
           },
           {
-            label:'Calendario 23-24'
+            label: 'Calendario 23-24'
           },
         ]
       },
       {
-        label:'Tutoriales',
-        items:[
+        label: 'Tutoriales',
+        items: [
           {
-            label:'Post'
+            label: 'Post'
           },
           {
-            label:'Vídeos'
-          },
-        ]
-      },
-      {
-        label:'Quienes somos',
-        items:[
-          {
-            label:'Orígenes'
-          },
-          {
-            label:'Staff'
-          },
-          {
-            label:'Young Riders'
-          },
-          {
-            label:'Premios 2023'
-          },
-          {
-            label:'Charlas 2022-2023'
+            label: 'Vídeos'
           },
         ]
       },
       {
-        label:'Contacto',
+        label: 'Quienes somos',
+        items: [
+          {
+            label: 'Orígenes'
+          },
+          {
+            label: 'Staff'
+          },
+          {
+            label: 'Young Riders'
+          },
+          {
+            label: 'Premios 2023'
+          },
+          {
+            label: 'Charlas 2022-2023'
+          },
+        ]
+      },
+      {
+        label: 'Contacto',
       },
     ];
   }
@@ -106,8 +131,12 @@ export class PublicComponent implements OnInit {
 
   }
 
-  cerrarSesion():void{
-    console.log("Código para cerrar sesión");
+  cerrarSesion(): void {
+    this._sesionService.cerrarSesion();
+    this.items[0] = {
+      label: 'Usuarios',
+      routerLink: '/login',
+    };
   }
 }
 

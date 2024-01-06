@@ -1,27 +1,30 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { appRoutingProviders, routing } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './shared/menu/menu.component';
 
-import { PublicComponent } from './components/public/public.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { LoginComponent } from './components/login/login.component';
-import { SigninComponent } from './components/signin/signin.component';
-import { HomeComponent } from './components/public/home/home.component';
 import { CentrosAdminComponent } from './components/admin/centros-admin/centros-admin.component';
 import { TechridersAdminComponent } from './components/admin/techriders-admin/techriders-admin.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/public/home/home.component';
+import { PublicComponent } from './components/public/public.component';
+import { ProfesorSigninComponent } from './components/signin/profesor-signin/profesor-signin.component';
+import { TechriderSigninComponent } from './components/signin/techrider-signin/techrider-signin.component';
+import { EmpresaSigninComponent } from './components/signin/empresa-signin/empresa-signin.component';
 
-import { MenubarModule } from 'primeng/menubar';
-import { InputTextModule } from 'primeng/inputtext';
-import { TooltipModule } from 'primeng/tooltip';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { MenubarModule } from 'primeng/menubar';
 import { SidebarModule } from 'primeng/sidebar';
+import { TooltipModule } from 'primeng/tooltip';
+import { SesionService } from './services/sesion.service';
 
 @NgModule({
   declarations: [
@@ -29,11 +32,13 @@ import { SidebarModule } from 'primeng/sidebar';
     PublicComponent,
     AdminComponent,
     LoginComponent,
-    SigninComponent,
     HomeComponent,
     MenuComponent,
     CentrosAdminComponent,
     TechridersAdminComponent,
+    ProfesorSigninComponent,
+    TechriderSigninComponent,
+    EmpresaSigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,7 @@ import { SidebarModule } from 'primeng/sidebar';
     CardModule,
     SidebarModule,
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders,SesionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
