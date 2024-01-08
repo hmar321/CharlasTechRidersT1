@@ -14,9 +14,9 @@ import { TechridersAdminComponent } from './components/admin/techriders-admin/te
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/public/home/home.component';
 import { PublicComponent } from './components/public/public.component';
-import { ProfesorSigninComponent } from './components/signin/profesor-signin/profesor-signin.component';
 import { TechriderSigninComponent } from './components/signin/techrider-signin/techrider-signin.component';
 import { EmpresaSigninComponent } from './components/signin/empresa-signin/empresa-signin.component';
+import { CentroSigninComponent } from './components/signin/centro-signin/centro-signin.component';
 
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -36,9 +36,9 @@ import { SesionService } from './services/sesion.service';
     MenuComponent,
     CentrosAdminComponent,
     TechridersAdminComponent,
-    ProfesorSigninComponent,
     TechriderSigninComponent,
     EmpresaSigninComponent,
+    CentroSigninComponent
   ],
   imports: [
     BrowserModule,

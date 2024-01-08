@@ -17,25 +17,25 @@ export class PublicComponent implements OnInit {
   ) {
     var linkUsuarios: MenuItem = {
       label: 'Usuarios',
-      items:[
+      items: [
         {
           label: 'Login',
-          routerLink:'login'
+          routerLink: 'login'
         },
         {
           label: 'Registrarse',
-          items:[
+          items: [
             {
-              label:'Profesor',
-              routerLink:'signin/profesor',
+              label: 'Centro formador',
+              routerLink: 'centro-signin',
             },
             {
-              label:'TechRider',
-              routerLink:'signin/techrider',
+              label: 'TechRider',
+              routerLink: 'techrider-signin',
             },
             {
-              label:'Empresa',
-              routerLink:'signin/empresa',
+              label: 'Empresa',
+              routerLink: 'empresa-signin',
             },
           ]
         }
@@ -135,7 +135,29 @@ export class PublicComponent implements OnInit {
     this._sesionService.cerrarSesion();
     this.items[0] = {
       label: 'Usuarios',
-      routerLink: '/login',
+      items: [
+        {
+          label: 'Login',
+          routerLink: 'login'
+        },
+        {
+          label: 'Registrarse',
+          items: [
+            {
+              label: 'Centro formador',
+              routerLink: 'centro-signin',
+            },
+            {
+              label: 'TechRider',
+              routerLink: 'techrider-signin',
+            },
+            {
+              label: 'Empresa',
+              routerLink: 'empresa-signin',
+            },
+          ]
+        }
+      ],
     };
   }
 }
